@@ -3,7 +3,7 @@ import { GetJogo, GetJogoLatest } from "@/services/getJogos";
 export default async function Page({ params }) {
   const { slug } = params;
   const jogo = await GetJogo(slug);
-  const jogoFormatado = jogo;
+  const jogoFormatado = jogo.slice(0, 5);
   return (
     <div>
       <h1>{slug}</h1>
@@ -22,7 +22,7 @@ export default async function Page({ params }) {
 
 export async function generateMetadata({ params }) {
   return {
-    title: params.slug,
-    description: params.slug,
+    title: `Resultado ${params.slug}`,
+    description: `O Resultados Loterias Caixa informa o resultado ${params.slug} ao vivo e em tempo real.`,
   };
 }
