@@ -8,6 +8,7 @@
 
 .title-loteria {
   padding: 20px 75px;
+  font-size: 23px;
 }
 
 @media (max-width: 1100px) {
@@ -16,6 +17,5 @@
   }
   .title-loteria {
     padding: 10px 20px;
-    font-size: 25px;
   }
 }

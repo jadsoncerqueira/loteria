@@ -3,8 +3,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 10px 75px;
-  background: rgb(3, 177, 3);
+  padding: 25px 75px;
+  background: #2e3078;
+  /* height: 70px; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.541);
 }
 
 header h1 {
@@ -35,7 +41,7 @@ li:first-child:before {
 .links {
   text-decoration: none;
   color: white;
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 700;
   padding: 5px 0;
 }
@@ -97,7 +103,7 @@ li:first-child:before {
     /* display: flex;
     align-items: center;
     justify-content: space-evenly; */
-    padding: 10px 20px;
+    padding: 25px 20px;
     /* background: rgb(3, 177, 3); */
   }
 }
