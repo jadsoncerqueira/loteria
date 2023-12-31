@@ -1,0 +1,10 @@
+.cards-loteria {
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  gap: 10px;
+  justify-content: center;
+}
+
+.title-loteria {
+  margin: 20px 84px;
+}
