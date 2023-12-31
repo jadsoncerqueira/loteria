@@ -1,6 +1,6 @@
 .cards-loteria {
   display: grid;
-  grid-template-columns: repeat(3, min-content);
+  grid-template-columns: repeat(1, min-content);
   gap: 10px;
   justify-content: center;
 }

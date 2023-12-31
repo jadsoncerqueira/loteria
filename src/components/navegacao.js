@@ -2,21 +2,9 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { navLinks } from "@/utils";
 import "./navegacao.css";
 
-const navLinks = [
-  { nome: "HOME", path: "/" },
-  { nome: "MAIS MILIONÁRIA", path: "/jogo/maismilionaria", col: 6 },
-  { nome: "MEGASENA", path: "/jogo/megasena" },
-  { nome: "LOTOFÁCIL", path: "/jogo/lotofacil", col: 4 },
-  { nome: "QUINA", path: "/jogo/quina", col: 5 },
-  { nome: "LOTOMANIA", path: "/jogo/lotomania", col: 5 },
-  { nome: "TIMEMANIA", path: "/jogo/timemania", col: 7 },
-  { nome: "DUPLASENA", path: "/jogo/duplasena" },
-  { nome: "FEDERAL", path: "/jogo/federal" },
-  { nome: "DIA DE SORTE", path: "/jogo/diadesorte", col: 7 },
-  { nome: "SUPER SETE", path: "/jogo/supersete", col: 7 },
-];
 export default function Navegacao() {
   let router = usePathname();
   router = router.split("/");

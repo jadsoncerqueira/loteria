@@ -1,13 +1,16 @@
 .card-loteria {
   border: 1px solid rgb(218, 218, 218);
   background-color: rgb(238, 238, 238);
+  padding-bottom: 10px;
   border-radius: 10px;
-  width: 380px;
+  width: 1190px;
+  /* height: 230px; */
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
-  padding: 5px;
+  /* padding: 5px; */
 }
 
 .dezenas {
@@ -26,6 +29,7 @@
   border-radius: 10px;
   min-width: 20px;
   font-weight: 700;
+  font-size: 14px;
 }
 
 .texto-entre-linhas {
@@ -35,4 +39,43 @@
   color: #333;
   /* padding: 10px; */
   font-size: 14px;
+}
+
+.info-head {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 10px;
+  color: white;
+  font-size: 17px;
+}
+
+.tabela-premio {
+  font-size: 14px;
+  border-collapse: collapse;
+  /* border: 1px solid gray; */
+  background-color: white;
+  width: 100%;
+  /* margin-left: 10px;
+  margin-right: 10px; */
+}
+
+.tabela-premio tr td,
+.tabela-premio tr th {
+  /* border: 1px solid gray; */
+  text-align: start;
+  /* background-color: white; */
+}
+
+tr:nth-child(even) {
+  background-color: #b4b4b4;
+}
+
+th {
+  padding: 10px;
+  border: 1px solid rgba(196, 196, 196, 0.281);
+}
+
+td {
+  padding: 3px 10px;
 }

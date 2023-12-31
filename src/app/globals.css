@@ -2,3 +2,15 @@
   margin: 0;
   padding: 0;
 }
+
+.secao-jogos {
+  display: grid;
+  grid-template-columns: repeat(1, min-content);
+  gap: 10px;
+  justify-content: center;
+  /* border: 1px solid red; */
+}
+
+.title-home {
+  margin: 20px 80px;
+}

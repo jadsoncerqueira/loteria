@@ -1,51 +1,39 @@
+import { formatarValorEmReal } from "@/utils";
 import "./cardLoteria.css";
 
-const navLinks = [
-  { nome: "HOME", path: "/" },
-  { nome: "MAIS MILIONÁRIA", path: "/jogo/maismilionaria", col: 6 },
-  { nome: "MEGASENA", path: "/jogo/megasena", col: 6 },
-  { nome: "LOTOFÁCIL", path: "/jogo/lotofacil", col: 5 },
-  { nome: "QUINA", path: "/jogo/quina", col: 5 },
-  { nome: "LOTOMANIA", path: "/jogo/lotomania", col: 5 },
-  { nome: "TIMEMANIA", path: "/jogo/timemania", col: 7 },
-  { nome: "DUPLASENA", path: "/jogo/duplasena", col: 6 },
-  { nome: "FEDERAL", path: "/jogo/federal", col: 5 },
-  { nome: "DIA DE SORTE", path: "/jogo/diadesorte", col: 7 },
-  { nome: "SUPER SETE", path: "/jogo/supersete", col: 7 },
-];
-
-export default function CardLoteria({ loteria }) {
+export default function CardLoteria({ loteria, navLinks }) {
   const {
+    valorAcumuladoConcurso_0_5,
     concurso,
     data,
     local,
-    dezenasOrdemSorteio,
     dezenas,
     premiacoes,
     dataProximoConcurso,
+    proximoConcurso,
     valorArrecadado,
     valorAcumuladoProximoConcurso,
     valorEstimadoProximoConcurso,
     acumulou,
   } = loteria;
+  console.log(navLinks);
 
   const col = navLinks.find(
     (nav) =>
       nav.path.split("/")[nav.path.split("/").length - 1] === loteria.loteria
-  ).col;
+  );
   console.log(loteria);
   return (
     <div className="card-loteria">
-      <div className="info-head">
+      <div className="info-head" style={{ backgroundColor: col.cor }}>
         <p>
-          <span>{loteria.loteria}</span> Concurso <strong>{concurso}</strong> |{" "}
-          {data}
+          <span>{col.nome}</span> Concurso <strong>{concurso}</strong> | {data}
         </p>
       </div>
 
       <div
         className="dezenas"
-        style={{ gridTemplateColumns: `repeat(${col}, min-content)` }}
+        style={{ gridTemplateColumns: `repeat(${col.col}, min-content)` }}
       >
         <p class="texto-entre-linhas">
           {loteria.loteria === "duplasena" ? "1º Sorteio" : ""}
@@ -54,17 +42,58 @@ export default function CardLoteria({ loteria }) {
           if (loteria.loteria === "duplasena" && ind === 5) {
             return (
               <>
-                <span key={ind}>{dezena}</span>
+                <span style={{ backgroundColor: col.cor }} key={ind}>
+                  {dezena}
+                </span>
                 <p class="texto-entre-linhas ">
                   {loteria.loteria === "duplasena" ? "2º Sorteio" : ""}
                 </p>
               </>
             );
           }
-          return <span key={ind}>{dezena}</span>;
+          return (
+            <span style={{ backgroundColor: col.cor }} key={ind}>
+              {dezena}
+            </span>
+          );
         })}
       </div>
-      <p>{local}</p>
+      <p style={{ color: "green" }}>
+        {" "}
+        <strong>
+          {acumulou &&
+            `Acumulou para o próximo sorteio: ${formatarValorEmReal(
+              valorAcumuladoProximoConcurso
+            )}`}
+        </strong>
+      </p>
+      <p>
+        <strong>Próximo concurso:</strong> {proximoConcurso} |{" "}
+        <strong>Valor estimado</strong>{" "}
+        {formatarValorEmReal(valorEstimadoProximoConcurso)} |{" "}
+        <strong>Data: </strong>
+        {dataProximoConcurso}
+      </p>
+      <p>Valor arrecadado: {formatarValorEmReal(valorArrecadado)}</p>
+      <table className="tabela-premio">
+        <thead>
+          <tr style={{ backgroundColor: col.cor, color: "white" }}>
+            <th>Faixa</th>
+            <th>Ganhadores</th>
+            <th>Prêmio</th>
+          </tr>
+        </thead>
+        <tbody>
+          {premiacoes.map(({ descricao, ganhadores, valorPremio }, i) => (
+            <tr className="linha" key={i}>
+              <td>{descricao.replace("nenhum", "0")}</td>
+              <td>{ganhadores}</td>
+              <td>{formatarValorEmReal(valorPremio)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p>Local do sorteio: {local}</p>
     </div>
   );
 }
