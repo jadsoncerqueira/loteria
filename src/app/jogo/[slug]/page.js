@@ -4,14 +4,73 @@ import { navLinks } from "@/utils";
 import "./page.css";
 import Footer from "@/components/footer";
 
+export const getStaticPaths = async () => {
+  return {
+    paths: [
+      {
+        params: {
+          slug: "megasena",
+        },
+      },
+      {
+        params: {
+          slug: "lotofacil",
+        },
+      },
+      {
+        params: {
+          slug: "lotomania",
+        },
+      },
+      {
+        params: {
+          slug: "maismilionaria",
+        },
+      },
+      {
+        params: {
+          slug: "timemania",
+        },
+      },
+      {
+        params: {
+          slug: "duplasena",
+        },
+      },
+      {
+        params: {
+          slug: "diadesorte",
+        },
+      },
+      {
+        params: {
+          slug: "supersete",
+        },
+      },
+      {
+        params: {
+          slug: "federal",
+        },
+      },
+      {
+        params: {
+          slug: "quina",
+        },
+      },
+    ],
+    fallback: "blocking", // false or "blocking"
+  };
+};
+
 export default async function Page({ params }) {
   const { slug } = params;
   const jogo = await GetJogo(slug);
-  const jogoFormatado = jogo.slice(0, 6);
+  const jogoFormatado = jogo.length > 6 ? jogo.slice(0, 6) : jogo;
 
   const newSlug = navLinks.find(
     (nav) => nav.path.split("/")[nav.path.split("/").length - 1] === slug
   );
+
   return (
     <>
       <div>

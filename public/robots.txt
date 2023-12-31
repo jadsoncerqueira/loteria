@@ -7,3 +7,4 @@ Host: https://www.loteriascaixaresultados.com
 
 # Sitemaps
 Sitemap: https://www.loteriascaixaresultados.com/sitemap.xml
+Sitemap: https://www.loteriascaixaresultados.com/server-sitemap-index.xml
