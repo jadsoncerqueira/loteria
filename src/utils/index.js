@@ -47,6 +47,11 @@ export const navLinks = [
   },
 ];
 
+// const aux = navLinks.map(
+//   (i) => `https://www.loteriascaixaresultados.com${i.path}`
+// );
+// console.log(aux);
+
 export function formatarValorEmReal(valor) {
   const valorFormatado = valor.toLocaleString("pt-BR", {
     style: "currency",

@@ -1,0 +1,21 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.loteriascaixaresultados.com
+
+# Sitemaps
+Sitemap: https://www.loteriascaixaresultados.com/sitemap.xml
+Sitemap: https://www.loteriascaixaresultados.com/server-sitemap-index.xml
+Sitemap: https://www.loteriascaixaresultados.com/
+Sitemap: https://www.loteriascaixaresultados.com/jogo/maismilionaria
+Sitemap: https://www.loteriascaixaresultados.com/jogo/megasena
+Sitemap: https://www.loteriascaixaresultados.com/jogo/lotofacil
+Sitemap: https://www.loteriascaixaresultados.com/jogo/quina
+Sitemap: https://www.loteriascaixaresultados.com/jogo/lotomania
+Sitemap: https://www.loteriascaixaresultados.com/jogo/timemania
+Sitemap: https://www.loteriascaixaresultados.com/jogo/duplasena
+Sitemap: https://www.loteriascaixaresultados.com/jogo/federal
+Sitemap: https://www.loteriascaixaresultados.com/jogo/diadesorte
+Sitemap: https://www.loteriascaixaresultados.com/jogo/supersete
