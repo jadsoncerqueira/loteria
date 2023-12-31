@@ -5,8 +5,10 @@ import Link from "next/link";
 import { navLinks } from "@/utils";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import "./navegacao.css";
 import { useState } from "react";
+import logo from "../../assets/LOGO_CAIXA.png";
+import "./navegacao.css";
+import Image from "next/image";
 
 export default function Navegacao() {
   let router = usePathname();
@@ -32,12 +34,14 @@ export default function Navegacao() {
             <CloseIcon sx={{ color: "white" }} />
           )}
         </button>
-        <h1>Logo</h1>
+        <Image width={180} src={logo} alt="logotipo" />
       </div>
       <nav className={`${isActiveMenu && "active"}`}>
         <ul>
           {navLinks.map((link, index) => {
             const pat = link.path.split("/");
+            let nome = link.nome.toLowerCase();
+            nome = nome[0].toUpperCase() + nome.substring(1);
             return (
               <li key={index}>
                 <Link
@@ -47,7 +51,7 @@ export default function Navegacao() {
                   href={link.path}
                   onClick={() => setIsActiveMenu(false)}
                 >
-                  {link.nome}
+                  {nome}
                 </Link>
               </li>
             );

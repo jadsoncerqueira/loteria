@@ -16,26 +16,24 @@ export default function CardLoteria({ loteria, navLinks }) {
     valorEstimadoProximoConcurso,
     acumulou,
   } = loteria;
-  console.log(navLinks);
 
   const col = navLinks.find(
     (nav) =>
       nav.path.split("/")[nav.path.split("/").length - 1] === loteria.loteria
   );
-  console.log(loteria);
   return (
     <div className="card-loteria">
       <div className="info-head" style={{ backgroundColor: col.cor }}>
-        <p>
+        <h2>
           <span>{col.nome}</span> Concurso <strong>{concurso}</strong> | {data}
-        </p>
+        </h2>
       </div>
 
       <div
         className="dezenas"
         style={{ gridTemplateColumns: `repeat(${col.col}, min-content)` }}
       >
-        <p class="texto-entre-linhas">
+        <p className="texto-entre-linhas">
           {loteria.loteria === "duplasena" ? "1º Sorteio" : ""}
         </p>
         {dezenas.map((dezena, ind) => {
@@ -45,7 +43,7 @@ export default function CardLoteria({ loteria, navLinks }) {
                 <span style={{ backgroundColor: col.cor }} key={ind}>
                   {dezena}
                 </span>
-                <p class="texto-entre-linhas ">
+                <p className="texto-entre-linhas ">
                   {loteria.loteria === "duplasena" ? "2º Sorteio" : ""}
                 </p>
               </>

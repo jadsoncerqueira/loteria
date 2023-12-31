@@ -1,4 +1,5 @@
 import CardLoteria from "@/components/cardLoteria";
+import Footer from "@/components/footer";
 import { GetJogoLatest } from "@/services/getJogos";
 import { navLinks } from "@/utils";
 
@@ -10,20 +11,24 @@ export default async function Home() {
 
   const promises = slugs.map((slug) => GetJogoLatest(slug));
   const responses = await Promise.all(promises);
-  console.log(responses);
   return (
-    <div>
-      <h1 className="title-home">Resultados de hoje Loterias</h1>
-      <hr />
-      <div className="secao-jogos">
-        {responses.map(({ concurso, data, local, ...rest }, index) => (
-          <CardLoteria
-            key={index}
-            loteria={{ concurso, data, local, ...rest }}
-            navLinks={navLinks}
-          />
-        ))}
-      </div>
-    </div>
+    <>
+      <main>
+        <section>
+          <h1 className="title-home">Resultados de hoje Loterias</h1>
+          <hr />
+          <div className="secao-jogos">
+            {responses.map(({ concurso, data, local, ...rest }, index) => (
+              <CardLoteria
+                key={index}
+                loteria={{ concurso, data, local, ...rest }}
+                navLinks={navLinks}
+              />
+            ))}
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
   );
 }

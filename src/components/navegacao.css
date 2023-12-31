@@ -4,7 +4,7 @@ header {
   align-items: center;
   justify-content: space-evenly;
   padding: 25px 75px;
-  background: #2e3078;
+  background: #277eb6;
   /* height: 70px; */
   position: fixed;
   top: 0;
@@ -41,7 +41,7 @@ li:first-child:before {
 .links {
   text-decoration: none;
   color: white;
-  font-size: 13.5px;
+  font-size: 14px;
   font-weight: 700;
   padding: 5px 0;
 }
@@ -103,7 +103,7 @@ li:first-child:before {
     /* display: flex;
     align-items: center;
     justify-content: space-evenly; */
-    padding: 25px 20px;
+    padding: 21px 20px;
     /* background: rgb(3, 177, 3); */
   }
 }
