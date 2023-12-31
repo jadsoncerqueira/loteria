@@ -38,7 +38,8 @@ export default function CardLoteria({ loteria }) {
     <div className="card-loteria">
       <div className="info-head">
         <p>
-          <span>{loteria.loteria}</span> Concurso {concurso} | {data}
+          <span>{loteria.loteria}</span> Concurso <strong>{concurso}</strong> |{" "}
+          {data}
         </p>
       </div>
 
