@@ -14,6 +14,7 @@ export default async function Home() {
   return (
     <div>
       <h1 className="title-home">Resultados de hoje Loterias</h1>
+      <hr />
       <div className="secao-jogos">
         {responses.map(({ concurso, data, local, ...rest }, index) => (
           <CardLoteria

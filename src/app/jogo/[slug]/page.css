@@ -1,10 +1,21 @@
 .cards-loteria {
   display: grid;
-  grid-template-columns: repeat(1, min-content);
+  grid-template-columns: repeat(1, 100%);
   gap: 10px;
   justify-content: center;
+  padding: 20px 75px;
 }
 
 .title-loteria {
-  margin: 20px 84px;
+  padding: 20px 75px;
+}
+
+@media (max-width: 1100px) {
+  .cards-loteria {
+    padding: 15px 20px;
+  }
+  .title-loteria {
+    padding: 10px 20px;
+    font-size: 25px;
+  }
 }

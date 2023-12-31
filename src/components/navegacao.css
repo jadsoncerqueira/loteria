@@ -3,7 +3,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 10px;
+  padding: 10px 75px;
   background: rgb(3, 177, 3);
 }
 
@@ -42,4 +42,62 @@ li:first-child:before {
 
 .selected {
   border-bottom: 2px solid white;
+}
+
+.menu-amburger {
+  display: none;
+}
+
+.logo-amburger {
+  display: flex;
+  gap: 10px;
+  /* border: 1px solid red; */
+  width: 100%;
+}
+
+.logo-amburger button {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.active {
+  display: block;
+}
+
+@media (max-width: 1317px) {
+  .menu-amburger {
+    display: block;
+  }
+
+  header {
+    /* border: 1px solid red; */
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  header nav ul {
+    /* border: 1px solid blue; */
+    flex-direction: column;
+  }
+
+  header nav {
+    /* border: 1px solid blue; */
+    width: 100%;
+  }
+  header nav {
+    display: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  header {
+    /* border: 1px solid red; */
+    /* display: flex;
+    align-items: center;
+    justify-content: space-evenly; */
+    padding: 10px 20px;
+    /* background: rgb(3, 177, 3); */
+  }
 }

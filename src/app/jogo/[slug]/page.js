@@ -17,6 +17,7 @@ export default async function Page({ params }) {
       <h1 className="title-loteria">
         Resultado <span style={{ color: newSlug.cor }}>{newSlug.nome}</span>
       </h1>
+      <hr />
       <div className="cards-loteria">
         {jogoFormatado.map(({ concurso, data, local, ...rest }, index) => (
           <CardLoteria
