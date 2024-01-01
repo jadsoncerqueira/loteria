@@ -66,9 +66,13 @@ export default function CardLoteria({ loteria, navLinks }) {
         </strong>
       </p>
       <p>
-        <strong>Próximo concurso:</strong> {proximoConcurso} |{" "}
+        <strong>Próximo concurso:</strong> {proximoConcurso}
+      </p>
+      <p>
         <strong>Valor estimado</strong>{" "}
-        {formatarValorEmReal(valorEstimadoProximoConcurso)} |{" "}
+        {formatarValorEmReal(valorEstimadoProximoConcurso)}
+      </p>
+      <p>
         <strong>Data: </strong>
         {dataProximoConcurso}
       </p>
