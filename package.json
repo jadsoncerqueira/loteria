@@ -16,6 +16,7 @@
     "@mui/material": "^5.15.2",
     "@mui/styled-engine-sc": "^6.0.0-alpha.10",
     "@vercel/analytics": "^1.1.1",
+    "@vercel/speed-insights": "^1.0.2",
     "next": "14.0.4",
     "next-sitemap": "^4.2.3",
     "react": "^18",
